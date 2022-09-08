@@ -1,0 +1,24 @@
+@charset 'UTF-8';
+@import "mixins/mixins";
+
+@include b(input) {
+  display: inline-block;
+  width: 300px;
+  height: 32px;
+  line-height: 1.5;
+  padding: 4px 7px;
+  font-size: 14px;
+  border: 1px solid #dcdee2;
+  border-radius: 4px;
+  color: #515a6e;
+  background-color: #fff;
+  background-image: none;
+  position: relative;
+  cursor: text;
+
+  &:active,
+  &:focus {
+    outline: 0;
+    border-color: #57a3f3;
+  }
+}

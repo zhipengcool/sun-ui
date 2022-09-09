@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+@import "common/var";
+@import "mixins/mixins";
+
+@include b(form-item) {
+  &-required {
+    &:before {
+      content: '*';
+      color: red;
+      padding-right: 5px;
+    }
+  }
+}

@@ -29,7 +29,8 @@ module.exports = {
           children: [
             'basic/button',
             'basic/input',
-            'basic/form'
+            'basic/form',
+            'basic/notice'
           ]
         }
       ]

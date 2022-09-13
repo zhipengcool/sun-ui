@@ -10,31 +10,35 @@
 </template>
 
 <script>
+import Emitter from '../../mixins/emitter'
 export default {
-  name: 'sun-input',
+  name: 'sInput',
+  mixins: [Emitter],
   props: {
-    /* value: {
+    value: {
       type: String,
       default: ''
-    } */
+    }
   },
   data () {
     return {
-      currentValue: ''
+      currentValue: this.value
     }
   },
   watch: {
-   /*  value (v) {
-      console.log('v: ', v)
+    value (v) {
       this.currentValue = v
-    } */
+    }
   },
   methods: {
     handleInput (_e) {
       this.currentValue = _e.target.value
       this.$emit('input', this.currentValue)
+      this.dispatch('sFormItem', 'on-form-change', this.currentValue) // 通知formItem有所改变
     },
-    handleBlur () {}
+    handleBlur () {
+      this.dispatch('sFormItem', 'on-form-blur', this.currentValue) // 通知formItem有所改变
+    }
   },
 }
 </script>

@@ -22,5 +22,8 @@
     "vuepress": "^1.9.7",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
+  },
+  "dependencies": {
+    "async-validator": "^4.2.5"
   }
 }

@@ -12,8 +12,8 @@ export default {
   data () {
     return {
       form: {
-        name: '',
-        email: ''
+        name: '22',
+        email: '33'
       },
       rules: {
         name: [
@@ -28,10 +28,13 @@ export default {
   },
   methods: {
     doValidate () {
-      console.log('form:', this.form)
       this.$refs.form.validate((valid) => {
         console.log(valid)
+        console.log('valid - form :', this.form)
       })
+    },
+    doReset () {
+      this.$refs.form.resetFileds()
     }
   }
 }
@@ -45,6 +48,7 @@ export default {
       <s-input v-model="form.email"></s-input>
     </s-form-item>
     <s-button @click.native="doValidate" style="margin-top:20px" type="primary">触发验证表单</s-button>
+    <s-button @click.native="doReset" style="margin-top:20px" type="primary">重置</s-button>
   </s-form>
 </template>
 
